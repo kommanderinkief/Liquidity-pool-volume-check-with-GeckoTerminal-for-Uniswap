@@ -30,8 +30,8 @@ function checkPool(pool) {
   const last_6h_cal = liquidity * 2.5;
 
 
-//figure out exactly what this does!
-if(liquidity < 800000 && liquidity > 100 && tradingVolume > 80 && tradingVolume < 300000){
+//this sets data capture limits play around to remove worst picks and possible 
+if(liquidity < 800000 && liquidity > 5000 && tradingVolume > 10000 && tradingVolume < 300000){
   if (tradingVolume > liquidity) {
     const message = `1 Hour: ${pool.attributes.address} Volume : $${tradingVolume} and Liquidity : $${liquidity}. pair name $${pool.attributes.name}  Ratio: ${tradingVolume / liquidity}!\n`;
           console.log(message);
